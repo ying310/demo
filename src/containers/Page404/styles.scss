@@ -1,0 +1,50 @@
+@import 'src/styles/medias.scss';
+@import 'src/styles/variables.scss';
+.page404-wapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    .title {
+        color: #404652;
+        letter-spacing: 13px;
+        font-size: 150px;
+        font-weight: bold;
+        @media screen and ($media-tablet) {
+            font-size: 120px;
+        }
+        @media screen and ($media-phone) {
+            font-size: 70px;
+        }
+    }
+    .subtitle {
+        color: $gray;
+        font-weight: 300;
+        font-size: 28px;
+        margin: 20px 0 30px;
+        text-align: center;
+        @media screen and ($media-tablet) {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        @media screen and ($media-phone) {
+            font-size: 16px;
+            margin: 20px 0 15px;
+        }
+    }
+    .bottom {
+        display: flex;
+        margin-top: 15px;
+        @media screen and ($media-phone) {
+            margin-top: 13px;
+        }
+        .version {
+            font-size: 12px;
+            color: $primary;
+            margin-left: 5px;
+            margin-top: 0.5px;
+        }
+    }
+}
