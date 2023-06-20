@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 export const collapseSlice = createSlice({
   name: 'collapse',
@@ -16,6 +16,6 @@ export const collapseSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { show, hide } = collapseSlice.actions
+export const { show, hide } = collapseSlice.actions;
 
 export default collapseSlice.reducer

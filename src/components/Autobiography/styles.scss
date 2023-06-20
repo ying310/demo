@@ -1,0 +1,17 @@
+@import 'src/styles/variables.scss';
+.autobiography-wrapper {
+    width: 100%;
+    text-align: center;
+    padding: $wrapper-padding;
+
+    .title {
+        text-align: left;
+    }
+
+    .content {
+        text-align: left;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 20px;
+        line-height: 30px;
+    }
+}

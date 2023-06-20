@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './styles.scss';
 import router from 'router';
 import { Layout, Menu } from 'antd';
-const { Sider, Content, Footer } = Layout;
+const { Sider } = Layout;
 
 export default function Lay(props) {
     const { children } = props;
@@ -24,15 +24,12 @@ export default function Lay(props) {
     const dispatch = useDispatch()
     return (
         <div className="main">
-            <Layout>
+            <Layout className='layout'>
                 {obj?.showSider && <Sider
                     style={{position: 'fixed', height: '100%', top: 0}}
                     breakpoint="lg"
                     collapsedWidth="0"
                     collapsible="true"
-                    onBreakpoint={(broken) => {
-                        // console.log(broken);
-                    }}
                     onCollapse={(collapsed, type) => {
                         // console.log(collapsed, type);
                         if (collapsed) {
@@ -63,6 +60,6 @@ export default function Lay(props) {
     );
 };
 
-Layout.propTypes = {
+Lay.propTypes = {
     children: PropTypes.element,
 };

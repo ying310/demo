@@ -3,29 +3,27 @@ import { Anchor } from 'antd';
 import './styles.scss';
 import Expertise from 'components/Expertise/Expertise';
 import Interest from 'components/Interest/Interest';
-import Personality from 'components/Personality/Personality';
+import Autobiography from 'components/Autobiography/Autobiography';
 
 export default function Home() {
     const items = [
         {key: 'expertise', href:'#expertise', title: '個人簡介'},
         {key: 'interest', href:'#interest', title: '興趣'},
-        {key: 'personality', href:'#personality', title: '個性'},
+        {key: 'autobiography', href:'#autobiography', title: '自傳'},
     ]
 
     return (
-        <>
-            <div className="home-wrapper">
-                <Anchor
-                    className='home-anchor'
-                    direction="horizontal"
-                    items={items}
-                />
-                <div>
-                    <Expertise title="個人簡介" />
-                    <Interest title="興趣" />
-                    <Personality title="個性" />
-                </div>
+        <div className="home-wrapper">
+            <Anchor
+                className='home-anchor'
+                direction="horizontal"
+                items={items}
+            />
+            <div>
+                <Expertise title="個人簡介" />
+                <Interest title="興趣" />
+                <Autobiography title="自傳" />
             </div>
-        </>
+        </div>
     );
 }

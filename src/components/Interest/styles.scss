@@ -1,9 +1,7 @@
 @import 'src/styles/variables.scss';
 .interest-wrapper {
     width: 100%;
-    height: 100vh;
     text-align: center;
-    background: $background;
     padding: $wrapper-padding;
 
     .title {
@@ -12,7 +10,7 @@
 
     .card {
         width: 200px;
-        margin: 16px auto 0px;
+        margin: 16px auto 8px;
 
         &:hover {
             cursor: pointer;
