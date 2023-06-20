@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss';
-import { Layout, Row, Col, Divider, Avatar, Tag, Space, Typography } from 'antd';
+import { Layout, Row, Col, Divider, Avatar, Tag, Space, Typography, Timeline } from 'antd';
 const { Content } = Layout;
 const { Title } = Typography;
 
@@ -43,6 +43,29 @@ export default function Expertise(props) {
                         <Tag color="success" className='tag'>MongoDB</Tag>
                         <Tag color="gold" className='tag'>git</Tag>
                     </Space>
+                </Row>
+                <Divider orientation="left" className='title'>Time</Divider>
+                <Row>
+                    <Col xs={24} sm={24} md={24} lg={12} xl={8}>
+                        <Timeline className='timeline'
+                            mode='left'
+                            pending="Futrue..."
+                            items={[
+                            {
+                                children: '畢業於國立東華大學',
+                            },
+                            {
+                                children: ' 進入元智大學擔任技術人員',
+                            },
+                            {
+                                children: '進入威納科技擔任PHP工程師',
+                            },
+                            {
+                                children: '進入仁寶電腦擔任雲端工程師',
+                            }
+                            ]}
+                        />
+                    </Col>
                 </Row>
             </Content>
         </div>

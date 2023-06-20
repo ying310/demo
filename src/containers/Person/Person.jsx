@@ -1,22 +1,12 @@
 import React from 'react';
 import './styles.scss';
-import { Descriptions, Image, Carousel } from 'antd';
-import { InstagramOutlined, FacebookFilled} from '@ant-design/icons';
+import { Descriptions, Image, Row, Col, Space } from 'antd';
+import { InstagramOutlined, FacebookFilled, GithubFilled } from '@ant-design/icons';
 
 
 export default function Person() {
     const contentStyle = {
         fontWeight: 'bold'
-    };
-
-    const contentStyle1= {
-        height: '200px',
-        color: '#fff',
-        lineHeight: '220px',
-        textAlign: 'center',
-        background: '#364d79',
-        width: '100%',
-        display: 'block'
     };
 
     return (
@@ -51,6 +41,16 @@ export default function Person() {
                 <h3 style={contentStyle1}>4</h3>
                 </div>
             </Carousel> */}
+            <Row>
+                <Col>
+                    <Space size={[16, 8]} wrap>
+                        <InstagramOutlined className='icon' style={{color: 'pink'}}/>
+                        <FacebookFilled className='icon' style={{color: 'blue'}}/>
+                        <GithubFilled className='icon' style={{color: 'black'}} />
+                    </Space>
+                </Col>
+            </Row>
+            
         </div>
     );
 }

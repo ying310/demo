@@ -5,4 +5,11 @@
     text-align: center;
     background-color: $background;
     padding: $wrapper-padding;
+
+    .icon {
+        font-size: 50px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
