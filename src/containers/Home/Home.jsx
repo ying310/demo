@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Anchor } from 'antd';
 import './styles.scss';
 import Expertise from 'components/Expertise/Expertise';
+import Interest from 'components/Interest/Interest';
+import Personality from 'components/Personality/Personality';
 
 export default function Home() {
     const items = [
@@ -19,20 +21,9 @@ export default function Home() {
                     items={items}
                 />
                 <div>
-                    <Expertise />
-                    <div
-                        id="interest"
-                        style={{
-                        width: '100%',
-                        height: '100vh',
-                        textAlign: 'center',
-                        background: 'rgba(0,0,255,0.02)',
-                        }}
-                    />
-                    <div
-                        id="personality"
-                        style={{ width: '100%', height: '100vh', textAlign: 'center', background: '#FFFBE9' }}
-                    />
+                    <Expertise title="個人簡介" />
+                    <Interest title="興趣" />
+                    <Personality title="個性" />
                 </div>
             </div>
         </>

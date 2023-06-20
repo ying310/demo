@@ -1,19 +1,21 @@
 import React from 'react';
 import './styles.scss';
-import { Layout, Row, Col, Divider, Avatar, Tag, Space } from 'antd';
+import { Layout, Row, Col, Divider, Avatar, Tag, Space, Typography } from 'antd';
 const { Content } = Layout;
+const { Title } = Typography;
 
-export default function Expertise() {
-
+export default function Expertise(props) {
+    const title = props.title;
     return (
         <div id="expertise" className="expertise-wrapper">
             <Content>
+                <Title className='title'>{title}</Title>
                 <Row>
                     <Col xs={24} sm={12} md={8} lg={8} xl={8}>
                         <Avatar className="circle-avatar" src="your_image_url" />
                     </Col>
                     <Col xs={24} sm={12} md={16} lg={16} xl={16} className='col'>
-                        <div className='title'>
+                        <div className='sub-title'>
                             Hi I'm Tony
                         </div>
                         <Divider dashed />
@@ -28,14 +30,18 @@ export default function Expertise() {
                 <Divider orientation="left" className='title'>Skills</Divider>
                 <Row>
                     <Space size={[0, 8]} wrap>
-                        <Tag color="magenta" className='tag'>PHP</Tag>
-                        <Tag color="magenta" className='tag'>Node.js</Tag>
-                        <Tag color="magenta" className='tag'>Python</Tag>
+                        <Tag color="processing" className='tag'>PHP</Tag>
+                        <Tag color="processing" className='tag'>Node.js</Tag>
+                        <Tag color="processing" className='tag'>Python</Tag>
+                        <Tag color="processing" className='tag'>Android/java</Tag>
                         <Tag color="magenta" className='tag'>HTML</Tag>
                         <Tag color="magenta" className='tag'>CSS</Tag>
                         <Tag color="magenta" className='tag'>Javascript</Tag>
-                        <Tag color="magenta" className='tag'>Android/java</Tag>
-                        <Tag color="magenta" className='tag'>MySQL</Tag>
+                        <Tag color="magenta" className='tag'>React</Tag>
+                        <Tag color="magenta" className='tag'>Angular</Tag>
+                        <Tag color="success" className='tag'>MySQL</Tag>
+                        <Tag color="success" className='tag'>MongoDB</Tag>
+                        <Tag color="gold" className='tag'>git</Tag>
                     </Space>
                 </Row>
             </Content>

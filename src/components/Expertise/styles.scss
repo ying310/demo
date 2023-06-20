@@ -4,7 +4,11 @@
     height: 100vh;
     text-align: center;
     background: $background;
-    padding: 45px;
+    padding: $wrapper-padding;
+
+    .title {
+        text-align: left;
+    }
 
     .circle-avatar {
         width: 120px;
@@ -16,7 +20,7 @@
         text-align: left;
     }
 
-    .title {
+    .sub-title {
         font-size: 1.5em;
     }
 

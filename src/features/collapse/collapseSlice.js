@@ -10,7 +10,7 @@ export const collapseSlice = createSlice({
       state.value = false;
     },
     hide: (state)  => {
-        state.value = true;
+      state.value = true;
     }
   },
 })

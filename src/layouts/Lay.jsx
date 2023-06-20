@@ -5,8 +5,8 @@ import { show, hide} from 'features/collapse/collapseSlice';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './styles.scss';
 import router from 'router';
-import { Layout, Menu, theme } from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
+import { Layout, Menu } from 'antd';
+const { Sider, Content, Footer } = Layout;
 
 export default function Lay(props) {
     const { children } = props;
