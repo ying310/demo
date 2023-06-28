@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux'
 import { show, hide } from 'features/collapse/collapseSlice';
+import { changeColor } from 'features/color/colorSlice';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './styles.scss';
 import router from 'router';
-import { Layout, Menu, Spin } from 'antd';
+import { Layout, Menu, Spin, FloatButton, ColorPicker } from 'antd';
+import { SettingFilled } from '@ant-design/icons';
 const { Sider } = Layout;
 
 export default function Lay(props) {
@@ -22,6 +24,7 @@ export default function Lay(props) {
     };
     const collapse = useSelector((state) => state.collapse.value);
     const loading = useSelector((state) => state.loading.value);
+    const color = useSelector((state) => state.color.value);
     const dispatch = useDispatch();
     return (
         <div className="main">
@@ -57,6 +60,16 @@ export default function Lay(props) {
                         {children}
                     </Layout>
                 </Layout>
+                <FloatButton.Group
+                    trigger="hover"
+                    type="primary"
+                    style={{ right: 50 }}
+                    icon={<SettingFilled />}
+                >
+                    <FloatButton />
+                    <FloatButton />
+                    <ColorPicker value={color} onChange={(value, hex) => {dispatch(changeColor({value: hex}))}}/>
+                </FloatButton.Group>
             </Spin>
         </div>
     );
