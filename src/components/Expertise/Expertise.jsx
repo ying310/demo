@@ -9,7 +9,7 @@ export default function Expertise(props) {
     const title = props.title;
     const treeData = [
         {
-          title: 'backend',
+          title: <span style={{fontWeight: 'bold'}}>Backend</span>,
           key: '0-0',
           children: [
             {
@@ -29,38 +29,39 @@ export default function Expertise(props) {
                 key: '0-0-3',
             },
           ],
-        },
-        {
-            title: 'fontend',
-            key: '0-1',
-            children: [
-                {
-                    title: <Tag color="magenta" className='tag'>HTML</Tag>,
-                    key: '0-1-0',
-                },
-                {
-                    title: <Tag color="magenta" className='tag'>CSS</Tag>,
-                    key: '0-1-1',
-                },
-                {
-                    title: <Tag color="magenta" className='tag'>Javascript</Tag>,
-                    key: '0-1-2',
-                },
-                {
-                    title: <Tag color="magenta" className='tag'>React</Tag>,
-                    key: '0-1-3',
-                },
-                {
-                    title: <Tag color="magenta" className='tag'>Angular</Tag>,
-                    key: '0-1-4',
-                },
-            ],
-        },
+        }
     ];
+
+    const treeData3 = [{
+        title: <span style={{fontWeight: 'bold'}}>Fontend</span>,
+        key: '0-1',
+        children: [
+            {
+                title: <Tag color="magenta" className='tag'>HTML</Tag>,
+                key: '0-1-0',
+            },
+            {
+                title: <Tag color="magenta" className='tag'>CSS</Tag>,
+                key: '0-1-1',
+            },
+            {
+                title: <Tag color="magenta" className='tag'>Javascript</Tag>,
+                key: '0-1-2',
+            },
+            {
+                title: <Tag color="magenta" className='tag'>React</Tag>,
+                key: '0-1-3',
+            },
+            {
+                title: <Tag color="magenta" className='tag'>Angular</Tag>,
+                key: '0-1-4',
+            },
+        ],
+    }];
 
     const treeData2 = [
         {
-          title: 'other',
+          title: <span style={{fontWeight: 'bold'}}>Other</span>,
           key: '0-0',
           children: [
             {
@@ -92,7 +93,7 @@ export default function Expertise(props) {
                 <Title className='title'>{title}</Title>
                 <Row>
                     <Col xs={24} sm={12} md={8} lg={8} xl={8} style={{padding: '10px'}}>
-                        <Avatar className="circle-avatar" src={photo} />
+                        <Avatar size={{ xs: 150, sm: 150, md: 150, lg: 180, xl: 180, xxl: 200 }} src={photo} />
                     </Col>
                     <Col xs={24} sm={12} md={16} lg={16} xl={16} className='col' style={{padding: '10px'}}>
                         <div className='sub-title'>
@@ -112,10 +113,13 @@ export default function Expertise(props) {
                 </Row>
                 <Divider orientation="left" className='title'>Skills</Divider>
                 <Row>
-                    <Col xs={24} sm={12} md={8} lg={8} xl={8}>
+                    <Col xs={24} sm={12} md={12} lg={8} xl={4}>
                         <Tree treeData={treeData} defaultExpandAll rootStyle={{background: 'transparent'}} />
                     </Col>
-                    <Col xs={24} sm={12} md={8} lg={8} xl={8}>
+                    <Col xs={24} sm={12} md={12} lg={8} xl={4}>
+                        <Tree treeData={treeData3} defaultExpandAll rootStyle={{background: 'transparent'}} />
+                    </Col>
+                    <Col xs={24} sm={12} md={12} lg={8} xl={4}>
                         <Tree treeData={treeData2} defaultExpandAll rootStyle={{background: 'transparent'}} />
                     </Col>
                 </Row>

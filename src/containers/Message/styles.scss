@@ -1,0 +1,8 @@
+@import 'src/styles/variables.scss';
+.message-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: $wrapper-padding;
+    background-color: $background;
+}

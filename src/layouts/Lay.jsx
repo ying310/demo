@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux'
-import { show, hide} from 'features/collapse/collapseSlice';
+import { show, hide } from 'features/collapse/collapseSlice';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './styles.scss';
 import router from 'router';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Spin } from 'antd';
 const { Sider } = Layout;
 
 export default function Lay(props) {
@@ -21,41 +21,43 @@ export default function Lay(props) {
         });
     };
     const collapse = useSelector((state) => state.collapse.value);
-    const dispatch = useDispatch()
+    const loading = useSelector((state) => state.loading.value);
+    const dispatch = useDispatch();
     return (
         <div className="main">
-            <Layout className='layout'>
-                {obj?.showSider && <Sider
-                    style={{position: 'fixed', height: '100%', top: 0}}
-                    breakpoint="lg"
-                    collapsedWidth="0"
-                    collapsible="true"
-                    onCollapse={(collapsed, type) => {
-                        // console.log(collapsed, type);
-                        if (collapsed) {
-                            dispatch(hide())
-                        } else {
-                            dispatch(show())
-                        }
-                    }}
-                >
-                    <Menu
-                        theme="dark"
-                        mode="inline"
-                        onClick={onClick}
-                        defaultSelectedKeys={[obj?.index]}
-                        items={router.map((o, index) => ({
-                            key: String(index + 1),
-                            icon: React.createElement(o?.icon),
-                            label: o?.name,
-                            }),
-                        )}
-                    />
-                </Sider>}
-                <Layout className='layout-margin' style={{marginLeft: collapse ? '0' : '200px'}}>
-                    {children}
+            <Spin tip="Loading..." spinning={loading} size="large" wrapperClassName="spin"  style={{height: '100%', maxHeight: '100%'}}>
+                <Layout className='layout'>
+                    {obj?.showSider && <Sider
+                        style={{position: 'fixed', height: '100%', top: 0}}
+                        breakpoint="lg"
+                        collapsedWidth="0"
+                        onCollapse={(collapsed) => {
+                            if (collapsed) {
+                                dispatch(hide())
+                            } else {
+                                dispatch(show())
+                            }
+                        }}
+                    >
+                        <Menu
+                            theme="dark"
+                            mode="inline"
+                            onClick={onClick}
+                            defaultSelectedKeys={[obj?.index]}
+                            selectedKeys={[obj?.index]}
+                            items={router.map((o, index) => ({
+                                key: String(index + 1),
+                                icon: React.createElement(o?.icon),
+                                label: o?.name,
+                                }),
+                            )}
+                        />
+                    </Sider>}
+                    <Layout className='layout-margin' style={{marginLeft: !obj?.showSider || collapse ? '0' : '200px'}}>
+                        {children}
+                    </Layout>
                 </Layout>
-            </Layout>
+            </Spin>
         </div>
     );
 };

@@ -1,0 +1,20 @@
+@import 'src/styles/variables.scss';
+.contact-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: $background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form-item {
+        min-width: 250px;
+        @media screen and (min-width: 500px){
+            min-width: 400px;
+        }
+        @media screen and (min-width: 700px){
+            min-width: 500px;
+        }
+    }
+}

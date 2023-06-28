@@ -4,8 +4,10 @@ import './styles.scss';
 import Expertise from 'components/Expertise/Expertise';
 import Interest from 'components/Interest/Interest';
 import Autobiography from 'components/Autobiography/Autobiography';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
+    const { t } = useTranslation();
     const items = [
         {key: 'expertise', href:'#expertise', title: '個人簡介'},
         {key: 'interest', href:'#interest', title: '興趣'},
@@ -20,7 +22,7 @@ export default function Home() {
                 items={items}
             />
             <div>
-                <Expertise title="個人簡介" />
+                <Expertise title={ t('Personal profile') } />
                 <Interest title="興趣" />
                 <Autobiography title="自傳" />
             </div>

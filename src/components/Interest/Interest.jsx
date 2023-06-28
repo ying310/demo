@@ -39,8 +39,8 @@ export default function Interest(props) {
                             >
                             <Meta title="休閒"/>
                             <p>桌遊</p>
-                            <p>聽音樂</p>
                             <p>踏青</p>
+                            <p>聽音樂</p>
                         </Card>
                     </Col>
                     <Col xs={24} sm={24} md={12} lg={8} xl={6}>
@@ -53,6 +53,7 @@ export default function Interest(props) {
                             <Meta title="遊戲"/>
                             <p>LOL</p>
                             <p>傳說對決</p>
+                            <p>跑跑卡丁車</p>
                         </Card>
                     </Col>
                     <Col xs={24} sm={24} md={12} lg={8} xl={6}>

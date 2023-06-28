@@ -6,13 +6,22 @@
     flex-direction: column;
 
     .layout {
-        min-height: auto;
-        background: $background;
+        min-height: 100%;
     }
 
     .layout-margin {
         min-height: auto;
-        background: $background;
         transition-duration: 0.2s; 
+    }
+
+    .spin {
+        height: 100%;
+        width: 100%;
+        min-height: 100%;
+    }
+
+    .ant-spin-container {
+        position: relative;
+        height: 100%;
     }
 }
