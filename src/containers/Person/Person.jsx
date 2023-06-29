@@ -38,14 +38,14 @@ export default function Person() {
         const w = window.open('about:blank');
         switch(type) {
             case 'ig':
-                w.location.href = "https://www.instagram.com/";
+                w.location.href = "https://www.instagram.com/jianying310/";
                 break;
             case 'fb':
-                w.location.href= "https://www.facebook.com/";
+                w.location.href= "https://www.facebook.com/profile.php?id=100002558677413";
                 break;
             case 'gh':
             default:
-                w.location.href= "https://github.com/";
+                w.location.href= "https://github.com/ying310";
                 break;
         }
     }
