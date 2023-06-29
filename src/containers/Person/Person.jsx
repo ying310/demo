@@ -5,27 +5,32 @@ import { InstagramOutlined, FacebookFilled, GithubFilled } from '@ant-design/ico
 import personPic from 'assets/images/person.jpg';
 import { getUser } from 'apis/UserApi';
 import Emptydata from 'components/Emptydata/';
+import { useDispatch, useSelector } from 'react-redux';
+import { showLoading, hideLoading } from 'store/loading/loadingSlice';
 
 
 export default function Person() {
     const [user, setUser] = useState(null);
+    const loading = useSelector(state => state.loading.value);
+    const dispatch = useDispatch();
     useEffect(() => {
-        console.log('effect');
+        dispatch(showLoading());
         const init = async() => {
             try {
                 const res = await getUser();
                 if (res?.success) {
                     setUser(res.data);
                 } else {
-                    setUser(false);
+                    setUser(null);
                 }
+                dispatch(hideLoading());
             } catch(err) {
-                console.log(err);
-                setUser(false);
+                setUser(null);
+                dispatch(hideLoading());
             }
         }
         init();
-    }, []);
+    }, [dispatch]);
 
     const contentStyle = {
         fontWeight: 'bold'
@@ -76,7 +81,7 @@ export default function Person() {
                         </Space>
                     </Col>
                 </Row>
-            </> :user === null ? <Skeleton /> : <Emptydata />}
+            </> :loading ? <Skeleton /> : <Emptydata />}
         </div>
     );
 }

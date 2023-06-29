@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getMessage } from '../../apis/MessageApi';
-import { showLoading, hideLoading } from 'features/loading/loadingSlice';
+import { showLoading, hideLoading } from 'store/loading/loadingSlice';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Table } from 'antd';

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux'
-import { show, hide } from 'features/collapse/collapseSlice';
+import { show, hide } from 'store/collapse/collapseSlice';
 import { Link, useLocation } from 'react-router-dom';
 import './styles.scss';
 import router from 'router';

@@ -1,14 +1,20 @@
 import React from 'react';
 import './styles.scss';
-import { Layout, Row, Col, Divider, Avatar, Typography, Timeline, Tree } from 'antd';
+import { Layout, Row, Col, Divider, Avatar, Typography, Timeline, Tree, Tag } from 'antd';
 import photo from 'assets/images/photo.jpg';
-import { backendData, fontendData, OtherData } from 'data/data';
+import skillJson from 'data/skills.json';
 import { useTranslation } from 'react-i18next';
 const { Content } = Layout;
 const { Title } = Typography;
 
 
 export default function Expertise(props) {
+    const skills = JSON.parse(JSON.stringify(skillJson.data));
+    skills.forEach((skill) => {
+        skill.children.forEach((child) => {
+            child.title = <Tag color={child.color} className='tag'>{child.title}</Tag>;
+        });
+    });
     const { t } = useTranslation();
     const title = props.title;
     return (
@@ -35,19 +41,15 @@ export default function Expertise(props) {
                         </div>
                     </Col>
                 </Row>
-                <Divider orientation="left" className='title'>{t('Skills')}</Divider>
+                <Divider orientation="left" className='divider-title'>{t('Skills')}</Divider>
                 <Row>
-                    <Col xs={24} sm={12} md={12} lg={8} xl={4}>
-                        <Tree treeData={backendData} defaultExpandAll rootStyle={{background: 'transparent'}} />
-                    </Col>
-                    <Col xs={24} sm={12} md={12} lg={8} xl={4}>
-                        <Tree treeData={fontendData} defaultExpandAll rootStyle={{background: 'transparent'}} />
-                    </Col>
-                    <Col xs={24} sm={12} md={12} lg={8} xl={4}>
-                        <Tree treeData={OtherData} defaultExpandAll rootStyle={{background: 'transparent'}} />
-                    </Col>
+                    {skills.map(data => {
+                        return (<Col key={data.key} xs={24} sm={12} md={12} lg={8} xl={4}>
+                            <Tree treeData={[data]} defaultExpandAll rootStyle={{background: 'transparent'}} />
+                        </Col>)
+                    })}
                 </Row>
-                <Divider orientation="left" className='title'>{t('Time')}</Divider>
+                <Divider orientation="left" className='divider-title'>{t('Time')}</Divider>
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={12} xl={8}>
                         <Timeline className='timeline'

@@ -101,7 +101,7 @@ export default function Contact() {
                 <Divider />
                 <Form.Item>
                     <Button type="primary" htmlType="submit" disabled={!submittable}>
-                        Submit
+                        {t('Submit')}
                     </Button>
                 </Form.Item>
             </Form>

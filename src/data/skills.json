@@ -1,0 +1,92 @@
+{
+    "data": [
+        {
+            "title": "Backend",
+            "key": "0-0",
+            "children": [
+                {
+                    "title": "PHP",
+                    "key": "0-0-0",
+                    "color": "processing"
+                },
+                {
+                    "title": "Node.js",
+                    "key": "0-0-1",
+                    "color": "processing"
+                },
+                {
+                    "title": "Python",
+                    "key": "0-0-2",
+                    "color": "processing"
+                },
+                {
+                    "title": "Android/java",
+                    "key": "0-0-3",
+                    "color": "processing"
+                }
+            ]
+        },
+        {
+            "title": "Fontend",
+            "key": "0-1",
+            "children": [
+                {
+                    "title": "HTML",
+                    "key": "0-1-0",
+                    "color": "magenta"
+                },
+                {
+                    "title": "CSS",
+                    "key": "0-1-1",
+                    "color": "magenta"
+                },
+                {
+                    "title": "Javascript",
+                    "key": "0-1-2",
+                    "color": "magenta"
+                },
+                {
+                    "title": "React",
+                    "key": "0-1-3",
+                    "color": "magenta"
+                },
+                {
+                    "title": "Angular",
+                    "key": "0-1-4",
+                    "color": "magenta"
+                }
+            ]
+        },
+        {
+            "title": "Other",
+            "key": "0-2",
+            "children": [
+                {
+                    "title": "MySQL",
+                    "key": "0-2-0",
+                    "color": "success"
+                },
+                {
+                    "title": "MongoDB",
+                    "key": "0-2-1",
+                    "color": "success"
+                },
+                {
+                    "title": "git",
+                    "key": "0-2-2",
+                    "color": "purple"
+                },
+                {
+                    "title": "Ubuntu",
+                    "key": "0-2-3",
+                    "color": "orange"
+                },
+                {
+                    "title": "Windows",
+                    "key": "0-2-4",
+                    "color": "orange"
+                }
+            ]
+        }
+    ]
+}
