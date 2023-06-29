@@ -1,34 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import './styles.scss';
-import { Descriptions, Image, Row, Col, Space, Divider } from 'antd';
+import { Descriptions, Image, Row, Col, Space, Divider, Skeleton  } from 'antd';
 import { InstagramOutlined, FacebookFilled, GithubFilled } from '@ant-design/icons';
 import personPic from 'assets/images/person.jpg';
 import { getUser } from 'apis/UserApi';
-import { showLoading, hideLoading } from 'features/loading/loadingSlice';
-import { useDispatch } from 'react-redux';
 import Emptydata from 'components/Emptydata/';
 
 
 export default function Person() {
-    const dispatch = useDispatch();
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(null);
     useEffect(() => {
         console.log('effect');
         const init = async() => {
             try {
-                dispatch(showLoading());
                 const res = await getUser();
                 if (res?.success) {
                     setUser(res.data);
+                } else {
+                    setUser(false);
                 }
-                dispatch(hideLoading());
             } catch(err) {
                 console.log(err);
-                dispatch(hideLoading());
+                setUser(false);
             }
         }
         init();
-    }, [dispatch]);
+    }, []);
 
     const contentStyle = {
         fontWeight: 'bold'
@@ -52,7 +49,7 @@ export default function Person() {
 
     return (
         <div className='person-wrapper'>
-            { user ? <>
+            {user ? <>
                 <Descriptions layout="vertical" column={{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }}>
                     <Descriptions.Item label="照片">
                         <Image
@@ -79,7 +76,7 @@ export default function Person() {
                         </Space>
                     </Col>
                 </Row>
-            </> : <Emptydata />}
+            </> :user === null ? <Skeleton /> : <Emptydata />}
         </div>
     );
 }
