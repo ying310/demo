@@ -1,3 +1,17 @@
 {
-    "Personal profile": "個人簡介"
+    "Personal profile": "個人簡介",
+    "Interest" : "興趣",
+    "Autobiography" : "自傳",
+    "Skills" : "技能",
+    "Time" : "時間軸",
+    "Sport" : "運動",
+    "Leisure": "休閒",
+    "Game": "遊戲",
+    "Other": "其他",
+    "Name" : "名字",
+    "Email" : "信箱",
+    "Suggest" : "建議",
+    "Contact Us" : "聯絡我",
+    "Empty data" : "沒有資料",
+    "Refresh" : "重新整理"
 }

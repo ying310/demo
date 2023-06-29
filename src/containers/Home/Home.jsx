@@ -9,9 +9,9 @@ import { useTranslation } from 'react-i18next';
 export default function Home() {
     const { t } = useTranslation();
     const items = [
-        {key: 'expertise', href:'#expertise', title: '個人簡介'},
-        {key: 'interest', href:'#interest', title: '興趣'},
-        {key: 'autobiography', href:'#autobiography', title: '自傳'},
+        {key: 'expertise', href:'#expertise', title: t('Personal profile')},
+        {key: 'interest', href:'#interest', title: t('Interest')},
+        {key: 'autobiography', href:'#autobiography', title: t('Autobiography')},
     ]
 
     return (
@@ -22,9 +22,9 @@ export default function Home() {
                 items={items}
             />
             <div>
-                <Expertise title={ t('Personal profile') } />
-                <Interest title="興趣" />
-                <Autobiography title="自傳" />
+                <Expertise title={t('Personal profile')} />
+                <Interest title={t('Interest')} />
+                <Autobiography title={t('Autobiography')} />
             </div>
         </div>
     );

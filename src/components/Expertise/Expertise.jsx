@@ -1,92 +1,16 @@
 import React from 'react';
 import './styles.scss';
-import { Layout, Row, Col, Divider, Avatar, Tag, Typography, Timeline, Tree } from 'antd';
+import { Layout, Row, Col, Divider, Avatar, Typography, Timeline, Tree } from 'antd';
 import photo from 'assets/images/photo.jpg';
+import { backendData, fontendData, OtherData } from 'data/data';
+import { useTranslation } from 'react-i18next';
 const { Content } = Layout;
 const { Title } = Typography;
 
+
 export default function Expertise(props) {
+    const { t } = useTranslation();
     const title = props.title;
-    const treeData = [
-        {
-          title: <span style={{fontWeight: 'bold'}}>Backend</span>,
-          key: '0-0',
-          children: [
-            {
-              title: <Tag color="processing" className='tag'>PHP</Tag>,
-              key: '0-0-0',
-            },
-            {
-              title: <Tag color="processing" className='tag'>Node.js</Tag>,
-              key: '0-0-1',
-            },
-            {
-                title: <Tag color="processing" className='tag'>Python</Tag>,
-                key: '0-0-2',
-            },
-            {
-                title: <Tag color="processing" className='tag'>Android/java</Tag>,
-                key: '0-0-3',
-            },
-          ],
-        }
-    ];
-
-    const treeData3 = [{
-        title: <span style={{fontWeight: 'bold'}}>Fontend</span>,
-        key: '0-1',
-        children: [
-            {
-                title: <Tag color="magenta" className='tag'>HTML</Tag>,
-                key: '0-1-0',
-            },
-            {
-                title: <Tag color="magenta" className='tag'>CSS</Tag>,
-                key: '0-1-1',
-            },
-            {
-                title: <Tag color="magenta" className='tag'>Javascript</Tag>,
-                key: '0-1-2',
-            },
-            {
-                title: <Tag color="magenta" className='tag'>React</Tag>,
-                key: '0-1-3',
-            },
-            {
-                title: <Tag color="magenta" className='tag'>Angular</Tag>,
-                key: '0-1-4',
-            },
-        ],
-    }];
-
-    const treeData2 = [
-        {
-          title: <span style={{fontWeight: 'bold'}}>Other</span>,
-          key: '0-0',
-          children: [
-            {
-              title: <Tag color="success" className='tag'>MySQL</Tag>,
-              key: '0-0-0',
-            },
-            {
-              title: <Tag color="success" className='tag'>MongoDB</Tag>,
-              key: '0-0-1',
-            },
-            {
-                title: <Tag color="gold" className='tag'>git</Tag>,
-                key: '0-0-2',
-            },
-            {
-                title: <Tag color="orange" className='tag'>Ubuntu</Tag>,
-                key: '0-0-3',
-            },
-            {
-                title: <Tag color="orange" className='tag'>Windows</Tag>,
-                key: '0-0-4',
-            },
-          ],
-        }
-    ];
     return (
         <div id="expertise" className="expertise-wrapper">
             <Content>
@@ -111,19 +35,19 @@ export default function Expertise(props) {
                         </div>
                     </Col>
                 </Row>
-                <Divider orientation="left" className='title'>Skills</Divider>
+                <Divider orientation="left" className='title'>{t('Skills')}</Divider>
                 <Row>
                     <Col xs={24} sm={12} md={12} lg={8} xl={4}>
-                        <Tree treeData={treeData} defaultExpandAll rootStyle={{background: 'transparent'}} />
+                        <Tree treeData={backendData} defaultExpandAll rootStyle={{background: 'transparent'}} />
                     </Col>
                     <Col xs={24} sm={12} md={12} lg={8} xl={4}>
-                        <Tree treeData={treeData3} defaultExpandAll rootStyle={{background: 'transparent'}} />
+                        <Tree treeData={fontendData} defaultExpandAll rootStyle={{background: 'transparent'}} />
                     </Col>
                     <Col xs={24} sm={12} md={12} lg={8} xl={4}>
-                        <Tree treeData={treeData2} defaultExpandAll rootStyle={{background: 'transparent'}} />
+                        <Tree treeData={OtherData} defaultExpandAll rootStyle={{background: 'transparent'}} />
                     </Col>
                 </Row>
-                <Divider orientation="left" className='title'>Time</Divider>
+                <Divider orientation="left" className='title'>{t('Time')}</Divider>
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={12} xl={8}>
                         <Timeline className='timeline'

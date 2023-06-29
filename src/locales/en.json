@@ -1,4 +1,17 @@
 {
-    "Personal profile": "Personal profile"
+    "Personal profile": "Personal profile",
+    "Interest" : "Interest",
+    "Autobiography" : "Autobiography",
+    "Skills" : "Skills",
+    "Time" : "Time",
+    "Sport" : "Sport",
+    "Leisure": "Leisure",
+    "Game": "Game",
+    "Other": "Other",
+    "Name" : "Name",
+    "Email" : "Email",
+    "Suggest" : "Suggest",
+    "Contact Us" : "Contact Us",
+    "Empty data" : "Empty data",
+    "Refresh" : "Refresh"
 }
-  

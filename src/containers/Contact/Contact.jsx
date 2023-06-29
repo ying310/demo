@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './styles.scss';
 import { Input, Button, Form, Typography, Divider, message } from 'antd';
 import { insertMessage } from 'apis/MessageApi';
-const { Title } =Typography;
+import { useTranslation } from 'react-i18next';
+const { Title } = Typography;
 
 export default function Contact() {
+    const { t } = useTranslation();
     const [submittable, setSubmittable] = useState(false);
     const [form] = Form.useForm();
     const values = Form.useWatch([], form);
@@ -64,7 +66,7 @@ export default function Contact() {
     return (
         <div className='contact-wrapper'>
             {contextHolder}
-            <Title>Contact</Title>
+            <Title>{t('Contact Us')}</Title>
             <Form
                 form={form}
                 name="basic"
@@ -75,9 +77,9 @@ export default function Contact() {
             >
                 <Form.Item
                     className='form-item'
-                    label="Name"
+                    label={t("Name")}
                     name="name"
-                    rules={[{
+                    rules={[{required: true, message: 'Please input your name!'},{
                         validator: (rule, value) => {
                             return value === undefined || value.trim().length === 0 ? Promise.reject('Please input your name!') : Promise.resolve();
                         }
@@ -87,13 +89,13 @@ export default function Contact() {
                 </Form.Item>
                 <Form.Item
                     className='form-item'
-                    label="Email"
+                    label={t("Email")}
                     name="email"
                     rules={[{ required: true, message: 'Please input your email!' }, { type: 'email', message: 'Format is wrong!'}]}
                 >
                     <Input />
                 </Form.Item>
-                <Form.Item name="suggest" label="Suggest">
+                <Form.Item name="suggest" label={t("Suggest")}>
                     <Input.TextArea rows={8}/>
                 </Form.Item>
                 <Divider />

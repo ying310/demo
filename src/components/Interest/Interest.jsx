@@ -5,12 +5,14 @@ import exercisePic from 'assets/images/exercise.png';
 import funPic from 'assets/images/fun.png';
 import gamePic from 'assets/images/game.png';
 import otherPic from 'assets/images/other.png';
+import { useTranslation } from 'react-i18next';
 const { Title } = Typography;
 const { Content } = Layout;
 const { Meta } = Card;
 
 
 export default function Interest(props) {
+    const { t } = useTranslation();
     const title = props.title;
     return (
         <div id="interest" className="interest-wrapper">
@@ -24,7 +26,7 @@ export default function Interest(props) {
                                 src={exercisePic}
                                 />}
                             >
-                            <Meta title="運動"/>
+                            <Meta title={t('Sport')} />
                             <p>排球</p>
                             <p>籃球</p>
                             <p>羽球</p>
@@ -37,7 +39,7 @@ export default function Interest(props) {
                                 src={funPic}
                                 />}
                             >
-                            <Meta title="休閒"/>
+                            <Meta title={t('Leisure')}/>
                             <p>桌遊</p>
                             <p>踏青</p>
                             <p>聽音樂</p>
@@ -50,7 +52,7 @@ export default function Interest(props) {
                                 src={gamePic}
                                 />}
                             >
-                            <Meta title="遊戲"/>
+                            <Meta title={t('Game')}/>
                             <p>LOL</p>
                             <p>傳說對決</p>
                             <p>跑跑卡丁車</p>
@@ -63,7 +65,7 @@ export default function Interest(props) {
                                 src={otherPic}
                                 />}
                             >
-                            <Meta title="其他"/>
+                            <Meta title={t('Other')}/>
                             <p>程式</p>
                             <p>研究新東西</p>
                         </Card>
