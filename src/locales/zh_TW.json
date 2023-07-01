@@ -14,5 +14,9 @@
     "Contact Us" : "聯絡我",
     "Empty data" : "沒有資料",
     "Refresh" : "重新整理",
-    "Submit" : "送出"
+    "Submit" : "送出",
+    "Format is wrong" : "格式錯誤",
+    "Please input your name" : "請輸入您的名字",
+    "Please input your email" : "請輸入您的信箱",
+    "Error message" : "錯誤訊息"
 }

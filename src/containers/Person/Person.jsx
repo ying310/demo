@@ -43,7 +43,7 @@ export default function Person() {
                 w.location.href = "https://www.instagram.com/jianying310/";
                 break;
             case 'fb':
-                w.location.href= "https://www.facebook.com/profile.php?id=100002558677413";
+                w.location.href= "https://www.facebook.com/people/%E5%90%B3%E5%BB%BA%E7%A9%8E/pfbid027sgfWRTjpXXw7hp7n9TeniRQ8XPqFti6rjvSc6hz7a6CwTWDpEtcr3u4G7qtC2jUl/";
                 break;
             case 'gh':
             default:

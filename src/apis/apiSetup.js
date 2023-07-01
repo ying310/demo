@@ -13,7 +13,6 @@ export const fetcher = async (url, method, data = {}) => {
             ...result?.data
         };
     } catch(err) {
-        return {success: false, data: "", errors: "api_error"};
-        // throw new Error(err?.response?.data?.message);
+        return {success: false, data: "", errors: "Api Error"};
     }
 }

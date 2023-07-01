@@ -25,11 +25,6 @@ export default function Contact() {
     const onFinish = async(values) => {
         try {
             setSubmittable(false);
-            if (values.name.trim() === '') {
-                error('name is empty');
-                return false;
-            }
-
             const data = {
                 name: values.name.trim(),
                 email: values.email.trim(),
@@ -59,8 +54,8 @@ export default function Contact() {
     const error = (errMsg) => {
         messageApi.open({
           type: 'error',
-          content: `Error message: ${errMsg}`,
-          duration: 1.5
+          content: `${t('Error message')}: ${errMsg}`,
+          duration: 1.5,
         });
     };
     return (
@@ -79,9 +74,9 @@ export default function Contact() {
                     className='form-item'
                     label={t("Name")}
                     name="name"
-                    rules={[{required: true, message: 'Please input your name!'},{
+                    rules={[{required: true, message: t('Please input your name')},{
                         validator: (rule, value) => {
-                            return value === undefined || value.trim().length === 0 ? Promise.reject('Please input your name!') : Promise.resolve();
+                            return value === undefined || (value.length > 0 && value.trim().length === 0) ? Promise.reject(t('Please input your name')) : Promise.resolve();
                         }
                     }]}
                 >
@@ -91,7 +86,7 @@ export default function Contact() {
                     className='form-item'
                     label={t("Email")}
                     name="email"
-                    rules={[{ required: true, message: 'Please input your email!' }, { type: 'email', message: 'Format is wrong!'}]}
+                    rules={[{ required: true, message: t('Please input your email') }, { type: 'email', message: t('Format is wrong')}]}
                 >
                     <Input />
                 </Form.Item>

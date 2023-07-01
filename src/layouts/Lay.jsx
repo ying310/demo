@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux'
-import { show, hide } from 'store/collapse/collapseSlice';
+import { useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router-dom';
 import './styles.scss';
 import router from 'router';
@@ -18,9 +17,8 @@ export default function Lay(props) {
     const [lang, setLang] = useState(localStorage.getItem("locales") ? localStorage.getItem("locales") : 'en');
     const obj = router.find(o => o.pathName === pathname);
     
-    const collapse = useSelector((state) => state.collapse.value);
+    const [collapse, setCollapse] = useState(false);
     const loading = useSelector((state) => state.loading.value);
-    const dispatch = useDispatch();
 
     const changeLang = () => {
         const lag = lang === 'zh' ? 'en' : 'zh';
@@ -40,9 +38,9 @@ export default function Lay(props) {
                             collapsedWidth="0"
                             onCollapse={(collapsed) => {
                                 if (collapsed) {
-                                    dispatch(hide())
+                                    setCollapse(true);
                                 } else {
-                                    dispatch(show())
+                                    setCollapse(false);
                                 }
                             }}
                         >

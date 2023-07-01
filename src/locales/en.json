@@ -14,5 +14,9 @@
     "Contact Us" : "Contact Us",
     "Empty data" : "Empty data",
     "Refresh" : "Refresh",
-    "Submit" : "Submit"
+    "Submit" : "Submit",
+    "Format is wrong" : "Format is wrong!",
+    "Please input your name" : "Please input your name!",
+    "Please input your email" : "Please input your email!",
+    "Error message" : "Error message"
 }
